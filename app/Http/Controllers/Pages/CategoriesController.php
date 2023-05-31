@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Pages;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
 {
     public function index()
     {
-        return view("pages.categories.index");
+        $allCategories = \App\Models\CategoriesBooks::latest()->get();
+        return view("pages.categories.index", compact($allCategories));
     }
     public function create()
     {
@@ -17,6 +18,7 @@ class CategoriesController extends Controller
     }
     public function store(Request $request)
     {
+
     }
     public function show(Request $request, string $id)
     {
