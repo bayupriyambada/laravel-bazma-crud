@@ -3,13 +3,18 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\CategoriesBooks;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
     public function index()
     {
-        return view("pages.categories.index");
+        $allCategories = CategoriesBooks::latest()->get();
+        return view(
+            "pages.categories.index",
+            compact($allCategories)
+        );
     }
     public function create()
     {
