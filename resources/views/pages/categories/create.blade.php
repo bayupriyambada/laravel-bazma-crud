@@ -1,4 +1,4 @@
-@section('pageTitle', 'Buat Kategori')
+@section('pageTitle', 'category')
 @extends('app.app')
 @section('content')
     <div class="container-xl">
@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <form action="{{route("perpus.categories.store")}}" method="post" autocomplete="off">
+                            <form action="{{ route('perpus.categories.store') }}" method="post" autocomplete="off">
                                 @csrf
                                 <div class="mb-3">
                                     <label class="form-label required">Nama Kategori</label>

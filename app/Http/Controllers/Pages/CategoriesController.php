@@ -22,9 +22,11 @@ class CategoriesController extends Controller
     }
     public function store(Request $request)
     {
+        return view("pages.categories.shop");
     }
     public function show(Request $request, string $id)
     {
+        return view("pages.categories.show");
     }
     public function update(Request $request, string $id)
     {
